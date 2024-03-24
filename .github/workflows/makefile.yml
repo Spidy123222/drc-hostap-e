@@ -14,7 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure
+    - name: packages
+      run: apt install docbook-to-man
+
+    - name: build
       run: ./build_release 2.6
 
     - name: Run check
