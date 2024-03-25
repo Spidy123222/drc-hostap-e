@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: packages
-      run: apt install docbook-to-man
+      run: sudo apt install docbook-to-man
 
     - name: build
       run: ./build_release 2.6
