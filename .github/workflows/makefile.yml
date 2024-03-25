@@ -17,5 +17,14 @@ jobs:
     - name: packages
       run: sudo apt install docbook-to-man
 
+    - name: config
+      run: cd wpa_supplicant && cp ../conf/wpa_supplicant.config ./.config
+
     - name: build
-      run: cd src && make && ls
+      run: cd src && make && cd .. && zip drc ./src
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: drc-hot
+        path: drc.zip
