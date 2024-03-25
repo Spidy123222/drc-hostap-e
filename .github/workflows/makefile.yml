@@ -18,7 +18,4 @@ jobs:
       run: sudo apt install docbook-to-man
 
     - name: build
-      run: cd src && make
-
-    - name: check
-      run: ls
+      run: cd src && make && ls
