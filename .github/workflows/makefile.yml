@@ -21,10 +21,10 @@ jobs:
       run: cd wpa_supplicant && cp ../conf/wpa_supplicant.config ./.config
 
     - name: build
-      run: cd src && make && cd .. && zip drc ./src
+      run: cd src && make && cd .. && zip -r drc ./src
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: drc-hot
-        path: drc.zip
+        path: src
